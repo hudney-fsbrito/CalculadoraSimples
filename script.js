@@ -26,8 +26,19 @@ function clicaOperador(e) {
     if (!numeroNovo) {
         calcula(sinal)
         armazenaValor()
+        sinal = e.innerText
     }
-    sinal = e.innerText
+    console.log(sinal);
+}
+
+function clicaResultado(e) {
+    if (e.innerText) {   
+        calcula(sinal)
+        resultado = numeroAnterior
+        tela.innerHTML = resultado;
+        sinal = undefined
+    }
+    console.log(sinal);
 }
 
 let operaçãoPendente = () => sinal != undefined;
@@ -50,11 +61,6 @@ function calcula(sinal) {
             case "/":
                 numeroAnterior = parseFloat(numeroAnterior / numeroAtual)
                 tela.innerHTML = numeroAnterior;
-                break;
-            case "=":
-                resultado = numeroAnterior
-                tela.innerHTML = resultado;
-                sinal = undefined
                 break;
             default:
                 console.log("não rolou!");
