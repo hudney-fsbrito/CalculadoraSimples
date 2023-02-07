@@ -15,9 +15,9 @@
     <div class="container">
         <div id="tela" class="tela-view"><h1></h1></div>
         <div class="container-numero">
-            <div id="clear" class="numero-value "><p onclick="apaga()">CR</p></div>
-            <div id="e5" class="numero-value "></div>
+            <div id="clearTotal" class="numero-value "><p onclick="apagaTotal()">CE</p></div>
             <div id="e4" class="numero-value "></div>
+            <div onclick="apagaParcial()" id="clearParcial" class="numero-value "><p>C</p></div>
             <div onclick="clicaOperador(this)" id="s+" class="numero-value sinal"><p >+</p></div>           
             <div onclick="clicaNumero(this)" id="7" class="numero-value num"><p onchange="excrever()">7</p></div>
             <div onclick="clicaNumero(this)" id="8" class="numero-value num"><p >8</p>
@@ -34,7 +34,7 @@
             <div onclick="clicaOperador(this)" id="s/" class="numero-value sinal"><p >/</p></div>           
             <div id="e1" class="numero-value"></div>
             <div onclick="clicaNumero(this)" id="0" class="numero-value num"><p >0</p></div>
-            <div id="e2" class="numero-value"></div>
+            <div onclick="clicaDecimal()" id="decimal" class="numero-value"><p>.</p></div>
             <div onclick="clicaResultado(this)" id="s=" class="numero-value"><p >=</p></div> 
         </div>
 

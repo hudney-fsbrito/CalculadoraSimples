@@ -42,6 +42,10 @@ body{
     border-radius: 5px;
     position: relative;
 }
+.numero-value:active{
+    background-color: black;
+    color:white;
+}
 .num{
     background-color: aqua;
 }

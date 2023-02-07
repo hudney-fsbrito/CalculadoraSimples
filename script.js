@@ -32,13 +32,15 @@ function clicaOperador(e) {
 }
 
 function clicaResultado(e) {
-    if (e.innerText) {   
-        calcula(sinal)
-        resultado = numeroAnterior
-        tela.innerHTML = resultado;
-        sinal = undefined
+    if (!numeroNovo) {
+        if (e.innerText) {   
+            calcula(sinal)
+            resultado = numeroAnterior
+            tela.innerHTML = resultado;
+            sinal = undefined
+        }
+        resultado = undefined
     }
-    console.log(sinal);
 }
 
 let operaçãoPendente = () => sinal != undefined;
@@ -67,4 +69,20 @@ function calcula(sinal) {
                 break;
         }
     }
+}
+
+function apagaParcial() {
+    if (resultado == undefined) {
+        numeroAtual = undefined
+        numeroNovo = true
+        tela.innerHTML = ''
+    } 
+}
+function apagaTotal() {
+    numeroAtual = undefined
+    numeroAnterior = undefined
+    numeroNovo = true;
+    sinal = undefined
+    resultado = undefined
+    tela.innerHTML = ''
 }
