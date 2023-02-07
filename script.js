@@ -1,22 +1,64 @@
 
 let tela = document.getElementById("tela");
 let divNum = document.getElementsByClassName("num")
-let numero;
-let numero1;
-let numero2;
+let numeroAtual;
+let numeroAnterior;
+let sinal;
+let numeroNovo = true;
 let resultado;
 
-
-// console.log(divNum);
-// console.log(parseInt(divNum.innerText) + 2);
-// console.log(parseFloat(divNum[0].innerText) + 2);
-function calc(e) {
-    numero = parseFloat(e.innerText);
-    console.log(numero);
-    escrever()
+function clicaNumero(e) {
+    if (numeroNovo) {
+        tela.innerHTML = parseFloat(e.innerText);
+        numeroNovo = false
+    } else {
+        tela.innerHTML += parseFloat(e.innerText);
+    }
+    numeroAtual = parseFloat(tela.innerText)
+}
+let armazenaValor = () => {
+    numeroAnterior = (parseFloat(tela.innerText));
+    numeroNovo = true
 }
 
-function escrever() {
-    tela.innerHTML += numero
+function clicaOperador(e) {
+    
+    if (!numeroNovo) {
+        calcula(sinal)
+        armazenaValor()
+    }
+    sinal = e.innerText
+}
 
+let operaçãoPendente = () => sinal != undefined;
+
+function calcula(sinal) {
+    if (operaçãoPendente()) {
+        switch (sinal) {
+            case "+":
+                numeroAnterior = parseFloat(numeroAnterior + numeroAtual)
+                tela.innerHTML = numeroAnterior;
+                break;
+            case "-":
+                numeroAnterior = parseFloat(numeroAnterior - numeroAtual)
+                tela.innerHTML = numeroAnterior;
+                break;
+            case "*":
+                numeroAnterior = parseFloat(numeroAnterior * numeroAtual)
+                tela.innerHTML = numeroAnterior;
+                break;
+            case "/":
+                numeroAnterior = parseFloat(numeroAnterior / numeroAtual)
+                tela.innerHTML = numeroAnterior;
+                break;
+            case "=":
+                resultado = numeroAnterior
+                tela.innerHTML = resultado;
+                sinal = undefined
+                break;
+            default:
+                console.log("não rolou!");
+                break;
+        }
+    }
 }

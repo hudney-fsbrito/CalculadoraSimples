@@ -15,27 +15,27 @@
     <div class="container">
         <div id="tela" class="tela-view"><h1></h1></div>
         <div class="container-numero">
-            <div id="clear" class="numero-value "><p onclick="calc()">CR</p></div>
+            <div id="clear" class="numero-value "><p onclick="apaga()">CR</p></div>
             <div id="e5" class="numero-value "></div>
             <div id="e4" class="numero-value "></div>
-            <div id="s+" class="numero-value sinal"><p >+</p></div>           
-            <div onclick="calc(this)" id="7" class="numero-value num"><p onchange="excrever()">7</p></div>
-            <div onclick="calc(this)" id="8" class="numero-value num"><p >8</p>
+            <div onclick="clicaOperador(this)" id="s+" class="numero-value sinal"><p >+</p></div>           
+            <div onclick="clicaNumero(this)" id="7" class="numero-value num"><p onchange="excrever()">7</p></div>
+            <div onclick="clicaNumero(this)" id="8" class="numero-value num"><p >8</p>
             </div>
-            <div id="9" class="numero-value num"><p >9</p></div>
-            <div id="s-" class="numero-value sinal"><p >-</p></div>           
-            <div id="4" class="numero-value num"><p >4</p></div>
-            <div id="5" class="numero-value num"><p >5</p></div>
-            <div id="6" class="numero-value num"><p >6</p></div>
-            <div id="s*" class="numero-value sinal"><p >*</p></div>           
-            <div id="1" class="numero-value num"><p >1</p></div>
-            <div id="2" class="numero-value num"><p >2</p></div>
-            <div id="3" class="numero-value num"><p >3</p></div>
-            <div id="s/" class="numero-value sinal"><p >/</p></div>           
+            <div onclick="clicaNumero(this)" id="9" class="numero-value num"><p >9</p></div>
+            <div onclick="clicaOperador(this)" id="s-" class="numero-value sinal"><p >-</p></div>           
+            <div onclick="clicaNumero(this)" id="4" class="numero-value num"><p >4</p></div>
+            <div onclick="clicaNumero(this)" id="5" class="numero-value num"><p >5</p></div>
+            <div onclick="clicaNumero(this)" id="6" class="numero-value num"><p >6</p></div>
+            <div onclick="clicaOperador(this)" id="s*" class="numero-value sinal"><p >*</p></div>           
+            <div onclick="clicaNumero(this)" id="1" class="numero-value num"><p >1</p></div>
+            <div onclick="clicaNumero(this)" id="2" class="numero-value num"><p >2</p></div>
+            <div onclick="clicaNumero(this)" id="3" class="numero-value num"><p >3</p></div>
+            <div onclick="clicaOperador(this)" id="s/" class="numero-value sinal"><p >/</p></div>           
             <div id="e1" class="numero-value"></div>
-            <div id="0" class="numero-value num"><p >0</p></div>
+            <div onclick="clicaNumero(this)" id="0" class="numero-value num"><p >0</p></div>
             <div id="e2" class="numero-value"></div>
-            <div id="s=" class="numero-value"><p >=</p></div> 
+            <div onclick="clicaOperador(this)" id="s=" class="numero-value"><p >=</p></div> 
         </div>
 
     </div>
